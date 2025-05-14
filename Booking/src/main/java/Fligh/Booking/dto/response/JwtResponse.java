@@ -1,0 +1,32 @@
+package Fligh.Booking.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+public class JwtResponse {
+    private String token;
+    private String refreshToken;
+    private String type = "Bearer";
+    private Long id;
+    private String username;
+    private String email;
+    private List<String> roles;
+    private boolean mfaEnabled;
+    private boolean mfaRequired;
+    
+    public JwtResponse(String token, String refreshToken, Long id, String username, String email, List<String> roles, 
+                       boolean mfaEnabled, boolean mfaRequired) {
+        this.token = token;
+        this.refreshToken = refreshToken;
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.roles = roles;
+        this.mfaEnabled = mfaEnabled;
+        this.mfaRequired = mfaRequired;
+    }
+}
